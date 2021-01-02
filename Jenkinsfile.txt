@@ -1,0 +1,13 @@
+pipeline{
+agent any
+stages{
+stage('build'){
+steps {
+echo ' build'
+sh'./gradlew build --no-dameon'
+archiveArtifacts artifacts: 'dist/trainschedule.zip'
+  }
+ }
+}
+}
+
